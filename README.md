@@ -45,12 +45,10 @@ Things you may want to cover:
 - belongs_to :user
 
 ## groups_usersテーブル(中間テーブル)
-
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-
 ### Association
 - belongs_to :user
 - has_mqany :comments
@@ -59,7 +57,6 @@ Things you may want to cover:
  |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false|
-
 ### Association
 - has_many : users, through: :groups_users
 - has_many : group_users
