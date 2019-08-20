@@ -54,7 +54,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- has_mqany :comments
+- has_many :comments
  
 ## groupテーブル
  |Column|Type|Options|
@@ -64,4 +64,4 @@ Things you may want to cover:
 ### Association
 - has_many : users, through: :groups_users
 - has_many : group_users
- 
+- has_many : comments
