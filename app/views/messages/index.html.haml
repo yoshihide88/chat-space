@@ -1,36 +1,24 @@
-.header
-  .header__left
-    .header__left__name 
-      mm
-    .header__left__icon
-      =fa_icon"edit"
-      =fa_icon"cog"
-  .header__right
-    .header__right__name
-      gg
-    .header__right__member  
-      %li Member :
-      %li.name tttt
-    .header__right__bruebox
-      Edit
-.contents 
-  .contents__left
-    .contents__left__name
-      gg
-    .contents__left__name__text
-      www
-  .contents__right
-    .contents__right__text
-      %li text-user
-      %li.fff 2019/08/21
-    .contents__right__text-details
-      こんにちは!
+%main
+  .side-bar
+    = render 'side_bar/index'
+  .wrapper
+    .header
+      .header__right
+        .header__right__name
+          gg
+        .header__right__member  
+          %li Member :
+          %li.name ユーザーネーム
+        .header__right__bruebox
+          =link_to "Edit", edit_group_path(@group)
+    .contents 
+      = render @messages
     .contents__right__bottom
-      .contents__right__bottom__box
-        .contents__right__bottom__box__text
-          type a message
-        .contents__right__bottom__box__icon
-          =fa_icon "image"
-    .contents__right__bottom__minibox
-      Send
-
+      .form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          .form_icon
+            = f.label :image, class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__submit'
