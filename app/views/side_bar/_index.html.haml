@@ -1,20 +1,20 @@
-.header
-  .header__left
-    .header__left__name 
+.side-header
+  .side-header__left
+    .side-header__left__name 
       = current_user.name
-    .header__left__icon
+    .side-header__left__icon
       %li
       = link_to new_group_path do
         =fa_icon"edit", class: 'icon2'
       %li
       = link_to edit_user_path(current_user) do
         =fa_icon'cog', class: 'icon'
-.contents
-  .contents__left
+.side-contents
+  .side-contents__left
     - current_user.groups.each do |group|
       = link_to group_messages_path(group) ,class: "link" do
-        .contents__left__box
-          .name
+        .side-contents__left__box
+          .side-name
             = group.name
-          .text
+          .side-text
             = group.show_last_message

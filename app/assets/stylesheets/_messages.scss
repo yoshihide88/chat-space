@@ -14,26 +14,26 @@
       position: absolute;
       margin-left: 20px;
     }
-     .icon{
-       position: relative;
-       left: 270px;
-       bottom:100px;
-       color:white;
-      }
-      .icon2{
-        position: relative;
-        left: 250px;
-        color: white;
-        }
-    
+    .icon{
+      position: relative;
+      left: 270px;
+      bottom:100px;
+      color:white;
+    }
+    .icon2{
+      position: relative;
+      left: 250px;
+      color: white;
+    }
   }
+
   &__right{
     float: right;
     width: calc(100vw - 300px);
     border-bottom: 1px solid #eeeeee;
     height:100%;
     &__bruebox{
-      color: $color-blue;
+      background-color: white;
       border: 1px solid $color-blue;
       position: absolute;
       right: 40px;
@@ -42,6 +42,13 @@
       width: 72px;
       text-align: center;
       line-height: 38px;
+      a {
+        text-decoration: none;
+        span {
+          color: $color-blue;
+          text-decoration: none;
+        }
+      }
     }
     &__name{
       height: 20px;
@@ -70,35 +77,13 @@
 .contents{
   height: calc(100vh - 100px);
   width:100%;
-  overflow: auto;
   background-color: #fafafa;
-  &__left{
-    background-color: #2f3e51;
-    width: 260px;
-    height: 100%;
-    float: left;
-    padding:20px;
-    color: $color-white;
-    &__box{
-      height: 100px;
-      width: 100%;
-      position: relative;
-      .name{
-        position: absolute;
-        left: 20px;
-        top: 50px;
-        width:200px;
-        height:20px;
-        font-size: 15px;
-      }
-      .text{
-        position: absolute;
-        left: 20px;
-        font-size: 11px;
-        top: 70px;
-        }
+    &-messages {
+      height: calc(100vh - 190px);
+      width:100%;
+      overflow: auto;
     }
-  }
+  
   &__right{
     width: calc(100vw - 300px);
     float: right;
@@ -142,7 +127,7 @@
           float: right;
           height: 50px;
           width: 100px;
-          background-color:blue; 
+          background-color:$color-blue; 
           position: absolute;
           bottom: 18px;
           left:845px;
@@ -172,6 +157,14 @@
             width:790px;
             position: absolute;
             }}
+          #message_image.hidden{
+            width:792px;
+            height:52px;
+          }
+          input::placeholder {
+            padding-left: 10px;
+          }
+          
         
       &__minibox{
         background-color: $color-blue;
@@ -188,9 +181,72 @@
     }
   }
 }
+
+.side-contents{
+  height: calc(100vh - 100px);
+  width:100%;
+  overflow: auto;
+  background-color: #fafafa;
+  &__left{
+    background-color: #2f3e51;
+    width: 260px;
+    height: 100%;
+    float: left;
+    padding:20px;
+    color: $color-white;
+    &__box{
+      height: 85px;
+      width: 100%;
+      position: relative;
+      .side-name{
+        position: absolute;
+        width:200px;
+        height:20px;
+        font-size: 15px;
+      }
+      .side-text{
+        position: absolute;
+        font-size: 11px;
+        top:25px;
+      }
+    }
+  }
+}
+
+
 main{
   display: flex;
 }
 .link{
   color: white;
+}
+
+.side-header{
+  height: 100px;
+  width: 100%;
+  &__left{
+    background-color: #253141;
+    width: 300px;
+    height: 100%;
+    float: left;
+    color: $color-white;
+    line-height: 100px;
+    font-weight: bold;
+    list-style: none;
+    &__name{
+      position: absolute;
+      margin-left: 20px;
+    }
+    .icon{
+      position: relative;
+      left: 270px;
+      bottom:100px;
+      color:white;
+    }
+    .icon2{
+      position: relative;
+      left: 250px;
+      color: white;
+    }
+  }
 }
