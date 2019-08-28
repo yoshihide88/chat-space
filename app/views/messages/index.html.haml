@@ -5,14 +5,18 @@
     .header
       .header__right
         .header__right__name
-          gg
+          = @group.name
         .header__right__member  
           %li Member :
-          %li.name ユーザーネーム
+          - @group.users.each do |user|
+            %li.name
+              = user.name 
         .header__right__bruebox
-          =link_to "Edit", edit_group_path(@group)
-    .contents 
-      = render @messages
+          =link_to edit_group_path(@group) do
+            %span EDIT
+    .contents
+      .contents-messages
+        = render @messages
     .contents__right__bottom
       .form
         = form_for [@group, @message] do |f|
@@ -21,4 +25,4 @@
             = f.label :image, class: 'form__mask__image' do
               = fa_icon 'picture-o', class: 'icon'
               = f.file_field :image, class: 'hidden'
-          = f.submit 'Send', class: 'form__submit'
+          = f.submit 'Send', class: 'form__submit' 
