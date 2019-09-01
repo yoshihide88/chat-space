@@ -16,6 +16,11 @@ class GroupsController < ApplicationController
       render :new
     end
   end
+  
+  # def users
+  #   @users = User.all
+  #   render template: 'user/index'
+  # end
 
   def update
     if @group.update(group_params)
