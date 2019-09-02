@@ -19,7 +19,6 @@ function appendErrUser(user) {
 
   $('#user-search-field').on('keyup', function(e){
     var input = $("#user-search-field").val();
-      console.log('#user-search-field')
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -28,7 +27,6 @@ function appendErrUser(user) {
     })
     
     .done(function(users){
-      console.log(users)
       $("#user-search-result").empty();
       if (users.length !== 0) {    
         users.forEach(function(user){
@@ -41,19 +39,10 @@ function appendErrUser(user) {
     })
   });
   $('#user-search-result').on('click','.user-search-add',function(){
-    //  $(this).parent().remove();
    var id = $(this).data("user-id")
    var name =$(this).data('user-name')
    
    var user_list = $(".chat-group-users")
-  //  user_list.append(name);
-  //  user_list.append(name);
-
-//    var html = `<div class='chat-group-user'>
-//    <input name='group[user_ids][]' type='hidden' value='${user.id}'>
-//    <p class='chat-group-user__name'>${user.name}</p>
-//    <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
-//  </div>`
 
     var html2 = `<div class='chat-group-user'>
       <input name='group[user_ids][]' type='hidden' value='${id}'>
@@ -61,8 +50,6 @@ function appendErrUser(user) {
       <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
     </div>`
    user_list.append(html2);
- //  $(this).parent().remove();
-//   $('.chat-group-form__field--right').remove(html)
   })
   $(document).on('click','.user-search-remove', function(){
     

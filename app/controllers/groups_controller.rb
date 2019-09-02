@@ -16,12 +16,7 @@ class GroupsController < ApplicationController
       render :new
     end
   end
-  
-  # def users
-  #   @users = User.all
-  #   render template: 'user/index'
-  # end
-
+ 
   def update
     if @group.update(group_params)
       redirect_to group_messages_path(@group), notice: 'グループを編集しました'
