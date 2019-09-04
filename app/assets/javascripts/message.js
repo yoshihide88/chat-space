@@ -3,16 +3,8 @@ $(function() {
 
   var buildMessageHTML = function(message) {
       //data-idが反映されるようにしている
-      var addImage = (message.image == null) ? b : all;
-      var all=  `<p class="lower-message__content">
-                 ${message.content }
-                </p>
-                 <img src=${message.image} class="lower-message__image" > `  
-      var b =`<p class="lower-message__content">
-              ${message.content }
-              </p>`
-                 
-      
+      var addImage = message.image? `<img src=${message.image} class="lower-message__image" > ` : ""; 
+  
       var html = `<div class="message" data-id=${ message.id }>
         div class="upper-message"> 
           <div class="upper-message__user-name">
@@ -23,9 +15,10 @@ $(function() {
           </div>
           </div>
           <div class="lower-message">
-
+            <p class="lower-message__content">
+            ${message.content }
+            </p>
           ${addImage}
-          
         </div>
        </div>`
    
