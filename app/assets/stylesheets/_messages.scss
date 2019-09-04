@@ -76,7 +76,7 @@
 
 .contents{
   height: calc(100vh - 100px);
-  width:100%;
+  width:calc(100vw - 300px);
   background-color: #fafafa;
     &-messages {
       height: calc(100vh - 190px);
