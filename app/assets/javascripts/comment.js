@@ -25,7 +25,7 @@ $(function(){
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action')
+    var url = $(this).attr('action');
     $.ajax({
       url: url,
       type: "POST",
@@ -36,9 +36,9 @@ $(function(){
   })
   .done(function(data){
     var html = buildHTML(data);
-    $('.contents-messages').append(html)
+    $('.contents-messages').append(html);
     $('.new_message')[0].reset();
-    $('.contents-messages').animate({scrollTop: $('.contents-messages')[0].scrollHeight})
+    $('.contents-messages').animate({scrollTop: $('.contents-messages')[0].scrollHeight});
     })
     .fail(function(){
       alert('error');
