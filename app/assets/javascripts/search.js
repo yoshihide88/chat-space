@@ -50,11 +50,12 @@ function appendErrUser(user) {
       <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
     </div>`
    user_list.append(html2);
+   $(this).parent().remove();
   })
   $(document).on('click','.user-search-remove', function(){
     
-    
-    $('.chat-group-user').remove();
+    $(this).parent().remove();
+  
   });
 
 });

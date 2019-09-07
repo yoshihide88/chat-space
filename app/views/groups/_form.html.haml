@@ -26,10 +26,13 @@
       .chat-group-form__search.clearfix
       .chat-group-users
         - group.users.each do | user |
-          = f.hidden_field :name, name: "group[user_ids][]", value: "#{user.id}"
+          -# = f.hidden_field :name, name: "group[user_ids][]", value: user.id
           .chat-group-user
+            = f.hidden_field :name, name: "group[user_ids][]", value: user.id
             =user.name
-
+            -if user.id != current_user.id
+              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
+                削除
       / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
       -# = f.collection_check_boxes :user_ids, User.all, :id, :name
 
