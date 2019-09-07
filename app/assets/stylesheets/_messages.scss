@@ -147,11 +147,11 @@
           margin-left: 10px;
           line-height: 50px;
         }
-        .icon{
-          position: absolute;
-          right: 460px;
-          bottom: 30px;
-        }
+        // .icon{
+        //   position: absolute;
+        //   right: 460px;
+        //   bottom: 30px;
+        // }
         .form__message{
           height: 50px;
           width:790px;
@@ -180,7 +180,13 @@
     } 
   }
 }
-
+.form__mask__image{
+  .icon{
+    position: relative;
+    top:15px;
+    left: 760px;
+    }
+}
 
 .side-contents{
   height: calc(100vh - 100px);
