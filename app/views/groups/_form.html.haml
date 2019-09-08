@@ -28,7 +28,7 @@
         - group.users.each do | user |
           -# = f.hidden_field :name, name: "group[user_ids][]", value: user.id
           .chat-group-user
-            = f.hidden_field :name, name: "group[user_ids][]", value: user.id
+            = f.hidden_field :name, name: "group[user_ids][]", value: user.id, class: "js-user"
             =user.name
             -if user.id != current_user.id
               .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn

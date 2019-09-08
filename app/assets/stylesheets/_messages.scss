@@ -152,8 +152,8 @@
 
 .form_icon{
   width:calc(100% - 360px);
-  height:55px;
   position: relative;
+  top: 55px;
   .icon{
     position: absolute;
     left:calc( 100% - 22px );

@@ -19,10 +19,22 @@ function appendErrUser(user) {
 
   $('#user-search-field').on('keyup', function(e){
     var input = $("#user-search-field").val();
+
+    var js = $(".js-user");
+    var arr = [];
+    js.each(function(i,ele)  {
+      arr.push(ele.value);
+    } )
+
+    if (input.length == 0){
+      $("#user-search-result").empty();
+      return;
+    }
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: { keyword: input },
+      data: { keyword: input,
+              userid: arr },
       dataType: 'json'
     })
     
@@ -45,7 +57,7 @@ function appendErrUser(user) {
    var user_list = $(".chat-group-users")
 
     var html2 = `<div class='chat-group-user'>
-      <input name='group[user_ids][]' type='hidden' value='${id}'>
+      <input name='group[user_ids][]' type='hidden' value='${id}' class='js-user'>
       <p class='chat-group-user__name'>${name}</p>
       <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
     </div>`
