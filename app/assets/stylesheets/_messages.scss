@@ -1,3 +1,4 @@
+
 .header{
   height: 100px;
   width: 100%;
@@ -119,73 +120,51 @@
     background-color: lightgrey;
     bottom: 0;
     position: fixed;
-    .new_message{
-      width: 900px;
-      height: 50px;
-      .form__submit{
-        color: white;
-        float: right;
-        height: 50px;
-        width: 100px;
-        background-color:$color-blue; 
-        position: absolute;
-        bottom: 18px;
-        left:845px;
-        }
-      .form_icon{
-        width:0;
-      }
-    }
-      .form{
-        width: 790px;
-        height: 50px;
-        background-color: white;
-        margin: 20px 80px 20px 40px;
-        .text{
-          color: #434a54;
-          font-size: 16px;
-          margin-left: 10px;
-          line-height: 50px;
-        }
-        // .icon{
-        //   position: absolute;
-        //   right: 460px;
-        //   bottom: 30px;
-        // }
-        .form__message{
-          height: 50px;
-          width:790px;
-          position: absolute;
-          }}
-        #message_image.hidden{
-          width:792px;
-          height:52px;
-        }
-        input::placeholder {
-          padding-left: 10px;
-        }
-        
-      
-    &__minibox{
-      background-color: $color-blue;
-      width: 100px;
-      height: 50px;
-      position: absolute;
-      right: 40px;
-      bottom: 20px;
-      color: white;
-      text-align: center;
-      font-size: 16px;
-      line-height: 48px;
-    } 
+}
+.form{
+  margin: 20px 80px 20px 40px;
+  .text{
+    color: #434a54;
+    font-size: 16px;
+    margin-left: 10px;
+    line-height: 50px;
   }
+  .form__message{
+    height: 50px;
+    width:calc(100% - 475px);
+    position: absolute;
+    }}
+  input::placeholder {
+    padding-left: 10px;
+  }
+  .form__submit{
+    color: white;
+    height: 50px;
+    width: 100px;
+    background-color:$color-blue; 
+    position: absolute;
+    bottom: 18px;
+    right: 315px;
+    }
+   
+} 
+  
+
+.form_icon{
+  width:calc(100% - 360px);
+  height:55px;
+  position: relative;
+  .icon{
+    position: absolute;
+    left:calc( 100% - 22px );
+    bottom: 20px;
+    }
 }
 .form__mask__image{
-  .icon{
-    position: relative;
-    top:15px;
-    left: 760px;
-    }
+  height:55px
+}
+.iii{
+  display: none;
 }
 
 .side-contents{
